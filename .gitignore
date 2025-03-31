@@ -1,0 +1,8 @@
+# Binaries
+program
+
+# Object files
+*.o
+
+# Binary output
+*.ppm

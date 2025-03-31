@@ -1,11 +1,11 @@
 program: main.o color.o
-	gcc main.o color.o -o main
+	gcc -std=c99 main.o color.o -o program
 
-main.o: main.c vec3.h point3.h color.h
-	gcc -c main.c -o main.o
+main.o: main.c vec3.h point3.h color.h ray.h
+	gcc -std=c99 -c main.c -o main.o
 
 color.o: color.c color.h
-	gcc -c color.c -o color.o
+	gcc -std=c99 -c color.c -o color.o
 
 clean:
-	rm -f *.o
+	rm -f *.o program

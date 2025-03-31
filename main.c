@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "vec3.h"
 #include "color.h"
+#include "ray.h"
 
 #define WIDTH 256
 #define HEIGHT 256

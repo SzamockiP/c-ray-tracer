@@ -2,11 +2,10 @@
 #define VEC3_H
 
 #include <math.h>
-typedef struct Vec3 Vec3;
 
-struct Vec3 {
-    double e[3];
-};
+typedef struct Vec3 {
+    double  e[3];
+} Vec3;
 
 // GETTERS
 
@@ -23,66 +22,60 @@ inline double vec3_z(const Vec3 *v){
 // OPERATORS
 
 inline Vec3 vec3_mul_vd(const Vec3 *v, double t){
-    Vec3 result = {
+    return (Vec3){
         .e = {
             v->e[0] * t,
             v->e[1] * t,
             v->e[2] * t
         }
     };
-    return result;
 };
 
 inline Vec3 vec3_div_vd(const Vec3 *v, double t){
-    Vec3 result = {
+    return (Vec3){
         .e = {
             v->e[0] / t,
             v->e[1] / t,
             v->e[2] / t 
         }
     };
-    return result;
 };
 
 inline Vec3 vec3_add_vv(const Vec3 *v1, const Vec3 *v2){
-    Vec3 result = {
+    return (Vec3){
         .e = {
             v1->e[0] + v2->e[0],
             v1->e[1] + v2->e[2],
             v1->e[1] + v2->e[2]
             }
     };
-    return result;
 };
 inline Vec3 vec3_sub_vv(const Vec3 *v1, const Vec3 *v2){
-    Vec3 result = {
+    return (Vec3){
         .e = {
             v1->e[0] - v2->e[0],
             v1->e[1] - v2->e[2],
             v1->e[1] - v2->e[2]
             }
     };
-    return result;
 };
 inline Vec3 vec3_mul_vv(const Vec3 *v1, const Vec3 *v2){
-    Vec3 result = {
+    return (Vec3){
         .e = {
             v1->e[0] * v2->e[0],
             v1->e[1] * v2->e[2],
             v1->e[1] * v2->e[2]
             }
     };
-    return result;
 };
 inline Vec3 vec3_div_vv(const Vec3 *v1, const Vec3 *v2){
-    Vec3 result = {
+    return (Vec3){
         .e = {
             v1->e[0] / v2->e[0],
             v1->e[1] / v2->e[2],
             v1->e[1] / v2->e[2]
             }
     };
-    return result;
 };
 
 inline double vec3_dot_vv(const Vec3 *v1, const Vec3 *v2){
@@ -92,14 +85,13 @@ inline double vec3_dot_vv(const Vec3 *v1, const Vec3 *v2){
 };
 
 inline Vec3 vec3_cross_vv(const Vec3 *v1, const Vec3 *v2){
-    Vec3 result = {
+    return (Vec3){
         .e = {
             v1->e[1] * v2->e[2] - v1->e[2] * v2->e[1],
             v1->e[0] * v2->e[2] - v1->e[2] * v2->e[0],
             v1->e[0] * v2->e[1] - v1->e[1] * v2->e[0]
-            }
+        }
     };
-    return result;
 };
 
 // METHODS
