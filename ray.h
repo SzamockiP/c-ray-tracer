@@ -3,6 +3,7 @@
 
 #include "vec3.h"
 #include "point3.h"
+#include "color.h"
 
 typedef struct Ray {
     Point3  origin;
@@ -18,5 +19,7 @@ inline Point3 ray_at(const Ray *ray, double t){
         }
     };
 }
+
+Color ray_color(const Ray *ray);
 
 #endif
