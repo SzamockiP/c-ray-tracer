@@ -13,9 +13,9 @@ typedef struct Ray {
 inline Point3 ray_at(const Ray *ray, double t){
     return (Point3){
         .e = {
-            (ray->origin.e[0] + ray->origin.e[0]) * t,
-            (ray->origin.e[1] + ray->origin.e[1]) * t,
-            (ray->origin.e[2] + ray->origin.e[2]) * t
+            ray->origin.e[0] + (ray->direction.e[0] * t),
+            ray->origin.e[1] + (ray->direction.e[1] * t),
+            ray->origin.e[2] + (ray->direction.e[2] * t)
         }
     };
 }
