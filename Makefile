@@ -16,4 +16,6 @@ sphere.o: sphere.c sphere.h vec3.h point3.h
 	gcc $(CFLAGS) -c sphere.c -o sphere.o
 
 clean:
-	rm -f *.o program *.ppm
+	rm -f *.o program
+
+
