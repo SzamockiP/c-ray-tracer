@@ -6,6 +6,6 @@
 
 typedef Vec3 Color;
 
-void write_color(FILE *out, const Color *pixel_color);
+void write_color(FILE *out, const Color pixel_color);
 
 #endif
