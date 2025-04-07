@@ -3,8 +3,20 @@
 #include "util.h"
 
 Color ray_color(const Ray *ray) {
-    if(hit_sphere((Point3){.e={0,0,-1}},0.5,ray))
-        return (Color){.e = {1,0,0}};
+
+    double t = hit_sphere((Point3){.e={0,0,-1}},0.5,ray);
+    if (t > 0.0) {
+        Vec3 pt = ray_at(ray,t);
+        Vec3 N = vec3_sub_vv(pt,(Point3){.e={0,0,-1}});
+        N = vec3_unit_vector(N);
+        return (Color){
+            .e = {
+                (N.e[0] + 1) * 0.5,
+                (N.e[1] + 1) * 0.5,
+                (N.e[2] + 1) * 0.5
+            }
+        };
+    }
 
     Vec3 unit_direction = vec3_unit_vector(ray->direction);
 

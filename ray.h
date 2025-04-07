@@ -10,7 +10,7 @@ typedef struct Ray {
     Vec3    direction;
 } Ray;
 
-inline Point3 ray_at(const Ray *ray, double t){
+static inline Point3 ray_at(const Ray *ray, double t){
     return (Point3){
         .e = {
             ray->origin.e[0] + (ray->direction.e[0] * t),
