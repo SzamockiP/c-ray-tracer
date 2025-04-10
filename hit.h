@@ -5,11 +5,21 @@
 #include "vec3.h"
 #include "point3.h"
 
-typedef struct hit_record {
+
+typedef struct HitRecord {
     Point3  p;
     Vec3    normal;
     double  t;
-} hit_record;
+} HitRecord;
+
+typedef struct Hittable {
+    typedef enum HittableType {
+        SPHERE
+    } HittableType;
+
+    const HittableType hittableType;
+    int index;
+} Hittable;
 
 
 #endif

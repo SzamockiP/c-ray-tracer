@@ -3,7 +3,7 @@
 #include "vec3.h"
 #include <stdbool.h>
 
-double hit_sphere(const Point3 center, double radius, const Ray *ray){
+double sphere_hit(const Point3 center, double radius, const Ray *ray){
     Vec3 oc     = vec3_sub_vv(center,ray->origin);
     double a    = vec3_lenght_squared(ray->direction);
     double h    = vec3_dot_vv(ray->direction,oc);

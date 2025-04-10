@@ -5,6 +5,6 @@
 #include "point3.h"
 #include <stdbool.h>
 
-double hit_sphere(const Point3 center, double radius, const Ray *ray);
+double sphere_hit(const Point3 center, double radius, const Ray *ray);
 
 #endif

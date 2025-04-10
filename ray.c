@@ -4,7 +4,7 @@
 
 Color ray_color(const Ray *ray) {
 
-    double t = hit_sphere((Point3){.e={0,0,-1}},0.5,ray);
+    double t = sphere_hit((Point3){.e={0,0,-1}},0.5,ray);
     if (t > 0.0) {
         Vec3 pt = ray_at(ray,t);
         Vec3 N = vec3_sub_vv(pt,(Point3){.e={0,0,-1}});
