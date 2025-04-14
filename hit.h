@@ -10,6 +10,7 @@ typedef struct HitRecord {
     Point3  p;
     Vec3    normal;
     double  t;
+    int     isFrontFace;
 } HitRecord;
 
 typedef struct Hittable {
@@ -21,5 +22,11 @@ typedef struct Hittable {
     int index;
 } Hittable;
 
+
+void hit_set_face_normal(
+    HitRecord *hit_record,
+    Ray *ray,
+    const Vec3 outward_normal
+);
 
 #endif

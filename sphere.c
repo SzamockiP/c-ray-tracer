@@ -51,8 +51,9 @@ bool sphere_hit
 
     rec->t = root;
     rec->p = ray_at(ray,rec->t);
-    rec->normal = vec3_sub_vv(rec->p,sphere->center);
-    rec->normal = vec3_div_vd(rec->normal, sphere->radius);
+
+    Vec3 outward_normal = vec3_sub_vv(rec->p,sphere->center);
+    hit_set_face_normal(rec, ray, outward_normal);
 
     return true;
 }
