@@ -3,6 +3,7 @@
 
 #include "ray.h"
 #include "point3.h"
+#include "hit.h"
 #include <stdbool.h>
 
 typedef struct Sphere

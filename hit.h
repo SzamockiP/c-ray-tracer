@@ -13,11 +13,11 @@ typedef struct HitRecord {
     int     isFrontFace;
 } HitRecord;
 
-typedef struct Hittable {
-    typedef enum HittableType {
-        SPHERE
-    } HittableType;
+typedef enum HittableType {
+    SPHERE
+} HittableType;
 
+typedef struct Hittable {
     const HittableType hittableType;
     int index;
 } Hittable;
