@@ -5,7 +5,6 @@
 #include "vec3.h"
 #include "point3.h"
 
-
 typedef struct HitRecord {
     Point3  p;
     Vec3    normal;
@@ -22,11 +21,26 @@ typedef struct Hittable {
     int index;
 } Hittable;
 
+// TODO: make it vector
+typedef struct HittableList{
+    int count;
+    Hittable *hittables;
+} HittableList;
 
-void hit_set_face_normal(
+void hit_record_set_face_normal(
     HitRecord *hit_record,
     Ray *ray,
     const Vec3 outward_normal
 );
+
+int hit_hittable_list(
+    const HittableList hittable_list,
+    const Ray *ray,
+    double ray_tmin,
+    double ray_tmax,
+    HitRecord *rec
+);
+
+int hit_hittable(Hittable hittable, const Ray *ray, double ray_tmin, double ray_tmax, HitRecord *rec);
 
 #endif
