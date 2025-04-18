@@ -1,5 +1,5 @@
 #include "hit.h";
-
+//TODO:skonczyc chapter
 void hit_record_set_face_normal(
     HitRecord *hit_record,
     Ray *ray,
